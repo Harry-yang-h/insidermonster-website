@@ -59,7 +59,9 @@
   <tr><th>功能</th><th>收集的信息</th><th>用途</th><th>不提供会怎样</th></tr>
   <tr><td>注册和登录</td><td>邮箱、手机号、密码（加密保存，我们看不到）；用 Apple 登录时，Apple 提供的用户标识和邮箱（可能是 Apple 中转邮箱）</td><td>创建账号、登录、找回密码</td><td>无法注册和登录</td></tr>
   <tr><td>完善资料</td><td>必填：昵称、性别、年龄、学校、所在城市、兴趣；选填：头像、生日、简介、主页背景</td><td>展示你的主页；按兴趣和城市推荐活动；帮助其他人了解同行者</td><td>必填项不填无法完成注册；选填项不影响使用</td></tr>
-  <tr><td>附近的活动</td><td>设备位置（仅在你授权时）</td><td>显示你附近的活动、按距离排序</td><td>改为按你选择的城市显示活动</td></tr>
+  <tr><td>附近的活动</td><td>设备位置（仅在你授权时；只在手机上使用，不上传）</td><td>显示你附近的活动、按距离排序；在城市列表里选出离你最近的城市</td><td>改为按你选择的城市显示活动</td></tr>
+  <tr><td>到场签到</td><td>你点击「我到了」时的设备位置</td><td>确认你已到达活动地点，处理签到争议</td><td>不发送位置，可请组局者人工确认</td></tr>
+  <tr><td>在聊天中发送位置</td><td>你选择发送的位置和地址</td><td>发送给聊天对象，并生成地图预览</td><td>无法发送位置，其他聊天功能不受影响</td></tr>
   <tr><td>发起和报名活动</td><td>活动的时间、地点、人数和介绍；报名、签到、出席记录；评价；信用分</td><td>组织和参加线下活动；记录履约情况</td><td>无法使用活动功能</td></tr>
   <tr><td>实名认证（自愿）</td><td><strong>【真实姓名】【证件号码】【证件照片】</strong></td><td>确认是你本人，显示「已实名」标识；发起收费活动的前提</td><td>不影响一般使用；不显示实名标识，不能发起收费活动</td></tr>
   <tr><td>学校认证（自愿）</td><td>学校名称、<strong>【在读证明材料】</strong></td><td>显示「已认证学校」标识</td><td>不显示学校认证标识</td></tr>
@@ -71,7 +73,7 @@
 <div class="table-scroll"><table>
   <tr><th>权限</th><th>用于</th><th>什么时候请求</th><th>能否关闭</th></tr>
   <tr><td>通知</td><td>活动提醒、消息和互动通知</td><td>首次打开 App，或发起、报名活动时</td><td>可以</td></tr>
-  <tr><td>定位</td><td>显示附近的活动</td><td>你查看附近活动时</td><td>可以，关闭后按城市显示</td></tr>
+  <tr><td>定位（仅使用期间）</td><td>附近的活动、到场签到、在聊天中发送位置、选择所在城市</td><td>首次进入首页时，或你点击「我到了」「发送位置」「使用当前位置」时</td><td>可以，关闭后按城市显示活动</td></tr>
   <tr><td>相册</td><td>上传头像、动态图片、认证材料</td><td>你选择图片时；只读取你选中的图片</td><td>可以</td></tr>
   <tr><td>相机</td><td>拍照上传</td><td>你点击拍照时</td><td>可以</td></tr>
 </table></div>
@@ -97,7 +99,8 @@
   <tr><th>服务商</th><th>提供什么</th><th>数据所在地</th></tr>
   <tr><td>Supabase</td><td>数据库、文件存储、登录认证</td><td>新加坡</td></tr>
   <tr><td>Expo（650 Industries, Inc.）</td><td>转发推送通知</td><td>美国</td></tr>
-  <tr><td>Apple</td><td>推送通知通道（APNs）、「通过 Apple 登录」</td><td>按 Apple 的隐私政策</td></tr>
+  <tr><td>Apple</td><td>推送通知通道（APNs）、「通过 Apple 登录」、地址搜索和解析</td><td>按 Apple 的隐私政策</td></tr>
+  <tr><td>OpenStreetMap 地图图片服务（staticmap.openstreetmap.de）</td><td>为聊天中的位置消息生成地图预览图，会收到该位置的坐标</td><td>德国</td></tr>
 </table></div>
 <p>以后接入短信验证码等新服务时，我们会更新本表。除上述服务商外，只有以下情况会对外提供你的信息：法律要求或执法机关合法要求；为保护用户或他人的人身安全所必需；公司发生合并、收购时，我们会提前告知你。</p>
 <p><strong>跨境传输</strong>：你的信息存储在新加坡的服务器上；运营公司位于中国，客服和审核人员可能在中国访问这些信息。也就是说，无论你身在哪个国家，你的信息都可能被传输到所在地以外。我们只在提供服务所必需的范围内传输，并采取第五节的安全措施；对特定地区用户的额外保障，见第十一节。</p>
@@ -186,7 +189,9 @@
   <tr><th>Feature</th><th>Information collected</th><th>Purpose</th><th>If you don't provide it</th></tr>
   <tr><td>Sign-up and log-in</td><td>Email, phone number, password (stored encrypted; we cannot see it). With Sign in with Apple: the user identifier and email Apple provides (possibly an Apple relay address)</td><td>Create your account, log in, reset your password</td><td>You can't sign up or log in</td></tr>
   <tr><td>Profile</td><td>Required: nickname, gender, age, school, city, interests. Optional: avatar, birthday, bio, profile background</td><td>Show your profile; recommend activities by interest and city; help others know who they're meeting</td><td>Without the required items you can't finish signing up; optional items don't affect use</td></tr>
-  <tr><td>Nearby activities</td><td>Device location (only with your permission)</td><td>Show activities near you, sorted by distance</td><td>Activities are shown by the city you choose instead</td></tr>
+  <tr><td>Nearby activities</td><td>Device location (only with your permission; used on your phone only, not uploaded)</td><td>Show activities near you, sorted by distance; pick the supported city closest to you</td><td>Activities are shown by the city you choose instead</td></tr>
+  <tr><td>Check-in</td><td>Your device location when you tap "I've arrived"</td><td>Confirm you reached the venue; resolve check-in disputes</td><td>No location is sent; the host can confirm your arrival instead</td></tr>
+  <tr><td>Sharing a location in chat</td><td>The location and address you choose to send</td><td>Send it to the person you're chatting with and show a map preview</td><td>You can't send locations; other chat features still work</td></tr>
   <tr><td>Hosting and joining activities</td><td>Time, place, size and description of activities; sign-ups, check-ins and attendance; reviews; reliability score</td><td>Organise and attend in-person activities; keep a record of reliability</td><td>You can't use activity features</td></tr>
   <tr><td>ID verification (optional)</td><td><strong>【Legal name】【ID number】【ID document photos】</strong></td><td>Confirm you are who you say you are and show a "Verified" badge; required to host paid activities</td><td>No effect on general use; no Verified badge and you can't host paid activities</td></tr>
   <tr><td>School verification (optional)</td><td>School name, <strong>【proof of enrolment】</strong></td><td>Show a "School verified" badge</td><td>No school badge</td></tr>
@@ -198,7 +203,7 @@
 <div class="table-scroll"><table>
   <tr><th>Permission</th><th>Used for</th><th>When we ask</th><th>Can you turn it off?</th></tr>
   <tr><td>Notifications</td><td>Activity reminders, messages and alerts</td><td>On first launch, or when you host or join an activity</td><td>Yes</td></tr>
-  <tr><td>Location</td><td>Showing nearby activities</td><td>When you view nearby activities</td><td>Yes; activities are then shown by city</td></tr>
+  <tr><td>Location (while using the app)</td><td>Nearby activities, check-in, sharing a location in chat, choosing your city</td><td>When you first open the home page, or when you tap "I've arrived", "Send location" or "Use current location"</td><td>Yes; activities are then shown by city</td></tr>
   <tr><td>Photos</td><td>Uploading your avatar, post images and verification documents</td><td>When you pick an image; we only read the images you select</td><td>Yes</td></tr>
   <tr><td>Camera</td><td>Taking photos to upload</td><td>When you tap to take a photo</td><td>Yes</td></tr>
 </table></div>
@@ -224,7 +229,8 @@
   <tr><th>Provider</th><th>Service</th><th>Data location</th></tr>
   <tr><td>Supabase</td><td>Database, file storage, authentication</td><td>Singapore</td></tr>
   <tr><td>Expo (650 Industries, Inc.)</td><td>Push notification delivery</td><td>United States</td></tr>
-  <tr><td>Apple</td><td>Push notification service (APNs); Sign in with Apple</td><td>Under Apple's privacy policy</td></tr>
+  <tr><td>Apple</td><td>Push notification service (APNs); Sign in with Apple; address search and lookup</td><td>Under Apple's privacy policy</td></tr>
+  <tr><td>OpenStreetMap static map service (staticmap.openstreetmap.de)</td><td>Generates map previews for locations shared in chat; receives the coordinates of that location</td><td>Germany</td></tr>
 </table></div>
 <p>We will update this table when we add new services, such as SMS verification. Apart from these providers, we disclose your information only where the law or a lawful request from authorities requires it; where necessary to protect the safety of users or others; or in a merger or acquisition, in which case we will tell you in advance.</p>
 <p><strong>International transfers</strong>: your information is stored on servers in Singapore, and our company is based in China, where support and review staff may access it. Wherever you live, your information may therefore be transferred outside your country. We transfer only what is needed to provide the service and protect it with the measures in section 5. Additional safeguards for particular regions are set out in section 11.</p>
