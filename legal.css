@@ -1,0 +1,126 @@
+/* Shared by /privacy and /terms. Loaded after style.css. */
+
+.legal-header {
+  background: var(--navy-deep);
+  color: var(--on-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-header .brand a {
+  color: var(--on-dark);
+  text-decoration: none;
+}
+
+.legal-title {
+  position: relative;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 8px 16px 40px;
+}
+
+.legal-title h1 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.legal-title p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--on-dark-muted);
+}
+
+.legal {
+  max-width: 800px;
+  margin: 32px auto 0;
+  padding: 0 16px;
+}
+
+.legal .card { padding: 24px 20px; }
+
+.legal h2 {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 32px 0 12px;
+}
+
+.legal h2:first-child { margin-top: 0; }
+
+.legal h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0 8px;
+}
+
+.legal p,
+.legal li {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--navy);
+}
+
+.legal p + p { margin-top: 10px; }
+
+.legal ul {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 10px 0;
+}
+
+.legal li + li { margin-top: 6px; }
+
+.legal a {
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.legal .note {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 12px 0;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin: 12px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.legal table {
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* four-column tables scroll sideways on phones; narrower tables wrap */
+.legal table:has(th:nth-child(4)) { min-width: 560px; }
+
+.legal th,
+.legal td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal th {
+  background: var(--cream);
+  font-weight: 600;
+}
+
+.footer .legal-links a + a { margin-left: 16px; }
+
+@media (min-width: 720px) {
+  .legal-title { padding: 8px 32px 56px; }
+  .legal-title h1 { font-size: 34px; }
+  .legal { padding: 0 32px; margin-top: 48px; }
+  .legal .card { padding: 36px 40px; }
+}
